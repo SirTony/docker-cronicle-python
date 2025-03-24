@@ -1,0 +1,16 @@
+services:
+  cronicle:
+    volumes:
+      - ./cronicle/data:/opt/cronicle/data:rw
+      - ./cronicle/logs:/opt/cronicle/logs:rw
+      - ./cronicle/plugins:/opt/cronicle/plugins:rw
+      - ./cronicle/scripts:/opt/cronicle/scripts:rw
+      - ./cronicle/app:/app:rw
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - 3012:3012
+    container_name: cronicle
+    image: ghcr.io/sirtony/cronicle:latest
+    restart: always

@@ -1,4 +1,8 @@
-FROM soulteary/cronicle:0.9.46
+FROM soulteary/cronicle:latest
+
+LABEL org.opencontainers.image.source=https://github.com/SirTony/docker-cronicle-python
+LABEL org.opencontainers.image.description="Dockerized Cronicle with Python script runner plugin."
+LABEL org.opencontainers.image.licenses=MIT
 
 ENV PYTHONUNBUFFERED=1
 
